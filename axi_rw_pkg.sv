@@ -1,5 +1,31 @@
 package axi_rw_pkg;
 
+    localparam  C_S0_AXI_DATA_WIDTH = 32;
+    localparam  C_S0_AXI_ADDR_WIDTH = 5;
+
+    logic                                   s0_axi_aclk;
+    logic                                   s0_axi_aresetn;
+    logic [C_S0_AXI_ADDR_WIDTH-1 : 0]       s0_axi_awaddr;
+    logic [2 : 0]                           s0_axi_awprot;
+    logic                                   s0_axi_awvalid;
+    logic                                   s0_axi_awready;
+    logic [C_S0_AXI_DATA_WIDTH-1 : 0]       s0_axi_wdata;
+    logic [(C_S0_AXI_DATA_WIDTH/8)-1 : 0]   s0_axi_wstrb;
+    logic                                   s0_axi_wvalid;
+    logic                                   s0_axi_wready;
+    logic [1 : 0]                           s0_axi_bresp;
+    logic                                   s0_axi_bvalid;
+    logic                                   s0_axi_bready;
+    logic [C_S0_AXI_ADDR_WIDTH-1 : 0]       s0_axi_araddr;
+    logic [2 : 0]                           s0_axi_arprot;
+    logic                                   s0_axi_arvalid;
+    logic                                   s0_axi_arready;
+    logic [C_S0_AXI_DATA_WIDTH-1 : 0]       s0_axi_rdata;
+    logic [1 : 0]                           s0_axi_rresp;
+    logic                                   s0_axi_rvalid;
+    logic                                   s0_axi_rready;
+
+
     task axi_write;
     input logic [31:0]  addr;
     input logic [31:0] data;
